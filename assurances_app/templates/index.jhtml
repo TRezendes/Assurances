@@ -46,6 +46,7 @@
 {% endblock %}
 {% block content %}
 <h1>Assurances</h1>
+<h2 class="afterdark">After Dark</h2>
 <h2>For When You Need a Little Reassurance</h2>
 <div class="button">
   <div>Click Here</div>

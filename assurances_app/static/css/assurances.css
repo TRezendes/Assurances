@@ -19,6 +19,9 @@
   --link-hover: #c9417c;
   --link-visited: #4d0000;
   --content-text-size: larger;
+  --mild-button-margin-landscape: 10vh auto;
+  --mild-button-margin-iphone-portrait: 15vh auto;
+  --mild-button-margin-ipad-portrait: 8vh auto;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -29,6 +32,10 @@
     --button-background-clear-active: #ffb4d063;
     --button-background-filled: #67001cdd ;
     --button-background-filled-active: #67001cf0;
+    
+    --mild-button-margin-landscape: -1vh auto;
+    --mild-button-margin-iphone-portrait: 4vh auto;
+    --mild-button-margin-ipad-portrait: 1vh auto;
   }
 }
 
@@ -95,6 +102,13 @@ main.content {
   }
 }
 
+.afterdark {
+  font-size: calc(var(--h2-size) * 1.5);
+  margin-bottom: -40px;
+  transform: rotate(345deg) translate(60%,-55%);
+  -webkit-text-stroke: 1px #c9417c;
+}
+
 .button {
   display: flex;
   align-items: center;
@@ -107,6 +121,7 @@ main.content {
   text-align: center;
   width: var(--button-width);
   font-size: var(--button-font-size);
+  margin: var(--mild-button-margin-landscape);
 }
 
 
@@ -267,7 +282,11 @@ a[rel~="external" i]:hover::after {
       aspect-ratio: unset;
       height: 90px;
       border-radius: 45px;
-      margin: -1vh auto;
+      margin: var(--mild-button-margin-landscape);
+    }
+    
+    .afterdark {
+      font-size: calc(var(--h2-size) * 1.2);
     }
   
   }
@@ -288,7 +307,7 @@ a[rel~="external" i]:hover::after {
     }
     
     h1{
-      margin-bottom: 0;
+      margin: 1vh auto 0;
     }
     
     .content {
@@ -315,11 +334,17 @@ a[rel~="external" i]:hover::after {
       aspect-ratio: unset;
       height: 300px;
       border-radius: 150px;
-      margin: 4vh auto;
+      margin: var(--mild-button-margin-iphone-portrait);
       background-color: var(--button-background-filled);
     }
     .button:active {
       background-color: var(--button-background-filled-active);
+    }
+    .afterdark {
+      font-size: calc(var(--h2-size) * 1.6);
+      margin-bottom: -175px;
+      transform: rotate(345deg) translate(30%,-25%);
+      -webkit-text-stroke: 3px #c9417c;
     }
   }
   
@@ -338,15 +363,30 @@ a[rel~="external" i]:hover::after {
       aspect-ratio: unset;
       height: 150px;
       border-radius: 100px;
-      margin: 1vh auto;
+      margin: var(--mild-button-margin-ipad-portrait);
       background-color: var(--button-background-filled);
     }
     
     main.content {
-      
-     
       --h1-size: 3.5rem;
       --h2-size: 2.5rem;
     }
+    
+    .afterdark {
+      font-size: calc(var(--h2-size) * 1.2);
+      margin-bottom: -80px;
+      transform: rotate(345deg) translate(30%,-35%);
+      -webkit-text-stroke: 2px #333333;
+    }
   }  
+}
+
+@media not (prefers-color-scheme: dark) {
+  #spicy_button, #ios_spicy_button {
+    display: none;
+  }
+  
+  .afterdark {
+    display: none;
+  }
 }
