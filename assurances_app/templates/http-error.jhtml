@@ -1,0 +1,41 @@
+{% extends "base.jhtml" %}
+{% block title %}404 - Not Found{% endblock %}
+{% block content %}
+  {% if code == 400 %}
+    {% set alt = "A tabby cat appears to flip off the camera. '400 Bad Request'" %}
+    {% set wiki_link = "https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#400" %}
+    {% set link_title = "List of HTTP status codes, 400 - Wikipedia" %}
+  {% elif code == 403 %}
+    {% set alt = "An gray tabby cat with white paws hangs by its belly over a toilet seat—head in, tail out. '403 Forbidden'" %}
+    {% set wiki_link = "https://en.wikipedia.org/wiki/HTTP_403" %}
+    {% set link_title = "HTTP 403 - Wikipedia" %}
+  {% elif code == 404  %}
+    {% set alt = "A calico cat 'hiding', half covered in sheets of paper. '404 Not Found'" %}
+    {% set wiki_link = "https://en.wikipedia.org/wiki/HTTP_404" %}
+    {% set link_title = "HTTP 403 - Wikipedia" %}
+  {% elif code == 405  %}
+    {% set alt = "Black and white photo of George W. Bush appearing to bite into the back of a kitten like an ear of corn. '405 Method not Allowed'" %}
+    {% set wiki_link = "https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#405" %}
+    {% set link_title = "List of HTTP status codes, 400 - Wikipedia" %}
+  {% elif code == 418  %}
+    {% set alt = "A small white and orange kitten pokes its head out of a white porcelain teapot. '418 I'm a Teapot" %}
+    {% set wiki_link = "https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#418" %}
+    {% set link_title = "List of HTTP status codes, 418 - Wikipedia" %}
+  {% elif code == 500  %}
+    {% set alt = "A Siamese cat rests inside an open computer enclosure and glares at the human finger pointing at it. '500 Internal Server Error" %}
+    {% set wiki_link = "https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#500" %} 
+    {% set link_title = "List of HTTP status codes, 500 - Wikipedia" %}
+  {% endif %}
+
+  
+  
+  
+  <img class="error_cat" alt="{{ alt }}" src="https://http.cat/{{ code }}" />
+  <h1>{{ code }}</h1>
+  <h2>{{ name }}</h2>
+  <p>
+    <a href="{{ wiki_link }}" title="{{ link_title }}" rel="external">More on this error </a>
+  </p>
+  {# <p><a href="{{ url_for("home.homepage") }}" title="Assurances Home">Return Home</a> #}
+  <p><a href="/" title="Assurances Home">Return Home</a>
+{% endblock %}

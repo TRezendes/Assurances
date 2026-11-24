@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg>
+<svg
+  id="assurances_favicon"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:svg="http://www.w3.org/2000/svg"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:cc="http://creativecommons.org/ns#"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  width="512"
+  height="512"
+  viewBox="0 0 512 512"
+>
+  <title id="assurances_favicon_title">assurances_favicon</title>
+  <metadata id="assurances_favicon_metadata">
+    <rdf:RDF>
+    <cc:License rdf:about="http://creativecommons.org/publicdomain/zero/1.0/">
+      <cc:permits rdf:resource="http://creativecommons.org/ns#Reproduction" />
+      <cc:permits rdf:resource="http://creativecommons.org/ns#Distribution" />
+      <cc:permits rdf:resource="http://creativecommons.org/ns#DerivativeWorks" />
+    </cc:License>
+    <cc:Work rdf:about="">
+      <cc:license rdf:resource="http://creativecommons.org/publicdomain/zero/1.0/" />
+      <dc:title>assurances_favicon</dc:title>
+      <dc:date>2026-11-15</dc:date>
+      <dc:creator>
+      <cc:Agent>
+      <dc:title>Timothy Rezendes</dc:title>
+      </cc:Agent>
+      </dc:creator>
+      <dc:source>https://github.com/TRezendes/SVGarden/</dc:source>
+      <dc:language>en</dc:language>
+    </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs>
+    <style>
+      .background {
+        fill: #ff98b4;
+        stroke: none;
+      }
+      
+      @media (prefers-color-scheme: dark) {
+        .background {
+          fill: #000000;
+        }
+      }
+      
+      .foreground {
+        fill: #c9417c;
+        stroke-width: 1;
+        stroke: #88003b;
+      }
+    </style>
+  </defs>
+  
+  <rect id="background" class="background" x="0" y="0" width="100%" height="100%" />
+  <path
+    id="middle_petal"
+    class="foreground"
+    d="
+      M 256 0
+      C 155 104 100 510 256 512
+      C 412 510 357 104 256 0
+      Z
+    "
+  />
+  <path
+    id="right_petal"
+    class="foreground"
+    d="
+      M 350 10
+      C 492 107 502 500 256 512
+      C 100 510 234 112 350 10
+      Z
+    "
+  />
+  <path
+    id="left_petal"
+    class="foreground"
+    d="
+      M 162 10
+      C 20 107 10 500 256 512
+      C 412 510 278 112 162 10
+      Z
+    "
+  />
+</svg>

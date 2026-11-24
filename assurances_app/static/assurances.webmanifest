@@ -1,0 +1,30 @@
+{
+  "lang": "en",
+  "name": "Assurances",
+  "id": "https://assurances.rezendes.info",
+  "scope": "https://assurances.rezendes.info",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#ff98b4",
+  "background_color": "#ff98b4",
+  "categories": ["entertainment","health"],
+  "description": "Affirmations for when you need a little reassurance.",
+  "icons": [
+    {
+      "src": "favicon-folder/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "favicon-folder/icon-mask.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "maskable"
+    },
+    {
+      "src": "favicon-folder/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}

@@ -1,0 +1,352 @@
+/* This CSS file is very specifically targeted.
+  This app was designed for my wife, so it is aimed at supporting her specific
+  iPhone (16e) and iPad (Air 3rd Gen). I am sure it will work fine in many other
+  browsers/devices, but, with the exception of Safari on macOS, they haven't
+  been considered. */
+
+:root {
+  --text-color: #000000;
+  --background-color: #ff98b4;
+  --button-background-clear: #00000021;
+  --button-background-clear-active: #00000044;
+  --button-background-filled: #ffdddddd;
+  --button-background-filled-active: #ddbbbbee;
+  --button-width: 18vw;
+  --button-font-size: 2.5rem;
+  --h1-size: 3rem;
+  --h2-size: 2rem;
+  --link: #88003b;
+  --link-hover: #c9417c;
+  --link-visited: #4d0000;
+  --content-text-size: larger;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-color: #ff98b4;
+    --background-color: #000000;
+    --button-background-clear: #ff98b444;
+    --button-background-clear-active: #ffb4d063;
+    --button-background-filled: #67001cdd ;
+    --button-background-filled-active: #67001cf0;
+  }
+}
+
+html {
+  color: var(--text-color);
+  background-color: var(--background-color);
+  background-image: url("../images/tulip.svg");
+  background-attachment: fixed;
+  background-position: right bottom -5px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  overflow: visible;
+  font-family: 'caveat-regular', cursive, sans-serif;
+  font-variation-settings: "wght" 400;
+}
+
+h1, h2 {
+  font-family: 'caveat-regular', cursive, sans-serif;
+  font-variation-settings: "wght" 700;
+}
+
+h1 {
+  font-size: var(--h1-size);
+}
+
+h2 {
+  font-size: var(--h2-size);
+  margin-top: -20px;
+}
+
+a {
+  color: var(--link);
+}
+
+a::visited {
+  color: var(--link-visited);
+}
+
+a::hover {
+  color: var(--link-hover);
+}
+
+a::active {
+  opacity: 0.25;
+}
+
+.content {
+  margin-left: 5vw;
+  margin-right: 45vw;
+  text-align: center;
+  padding: 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+main.content {
+  text-align: left;
+  font-size: var(--content-text-size);
+  
+  h1 {
+    text-align: center;
+  }
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-color: var(--button-background-clear);
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  box-shadow: 0.125rem 0.125rem 0.125rem var(--button-background-clear-active);
+  text-align: center;
+  width: var(--button-width);
+  font-size: var(--button-font-size);
+}
+
+
+.button:active {
+  background-color: var(--button-background-clear-active);
+  box-shadow: none;
+  transform: translate(0.125rem,0.125rem);
+}
+
+.button.spicy {
+  width: calc(var(--button-width) * 0.8);
+}
+
+#spicy_button {
+  font-size: calc(var(--button-font-size) * 0.9);
+  display: flex;
+}
+
+#ios_spicy_button {
+  flex-flow: column;
+  font-size: calc(var(--button-font-size) * 0.8);
+  display: none;
+}
+
+#pepper {
+  font-size: 60%;
+}
+
+/* .haptic-switch based on https://github.com/m1ckc3s/project-fathom */
+/* Adds haptic feedback on the button when tapped on a mobile device */
+.haptic-switch {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  clip-path: inset(0 round 50%);
+}
+
+a[rel~="external" i]::after {
+  background-image: url('../images/linkout-closed.svg');
+  background-size: 1.4em 1.4em;
+  background-position: left;
+  background-repeat: no-repeat;
+  display: inline-flex;
+  vertical-align: middle;
+  content: '';
+  height: 1.5em;
+  width: 1.5em;
+}
+
+a[rel~="external" i]:hover::after {
+  background-image: url('../images/linkout-open.svg');
+}
+
+.error_cat {
+  border-radius: 6.5%;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* This block is for narrow desktop browser windows
+  (and Android, I guess, because -webkit-touch-callout is specific to i(Pad)OS).
+  The `@supports not…` rule prevents this block from being applied to
+  Apple Mobile devices. No word yet on whether -webkit-touch-callout is supported
+  on the new touchscreen MacBook Pro. */
+@supports not (-webkit-touch-callout: none) {
+  @media (max-aspect-ratio: 1 / 1) {
+    
+    :root {
+    --button-width: 50vw;
+    --button-font-size: 4rem;
+    }
+    
+    html {
+      background-position: left 50% bottom;
+    }
+    
+    .content {
+      margin: auto;
+      text-align: center;
+      padding: 0 5vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    main.content {
+      background-color: var(--button-background-filled);
+      border-radius: 100px;
+      padding: 5vh 10vw;
+      margin: 5vh 5vw;
+    }
+    
+    .button {
+      background-color: var(--button-background-filled);
+    }
+    
+    .button:active {
+      background-color: var(--button-background-filled-active);
+    }
+  }
+}
+/* This block is for Apple mobile (i(Pad)OS) devices. */
+@supports (-webkit-touch-callout: none) {
+  
+  /* Commented out background colors are for target testing */
+  :root {
+    /* --background-color: red; */
+  }
+  
+  #spicy_button {
+    display: none;
+  }
+  
+  #ios_spicy_button {
+    display: flex;
+  }
+  
+  /* iPhone/iPad in landscape orientation */
+  @media (min-aspect-ratio: 1 / 1) {
+    
+    :root {
+      /* --background-color: blue; */
+      
+      --button-width: 25vw;
+      --h1-size: 2.5rem;
+      --h2-size: 1.8rem;
+      
+      --content-text-size: 1rem;
+    }
+    
+    html {
+      background-size: auto 100%;
+      background-position: left 90% top;
+    }
+    
+    .content {
+      margin-left: 0;
+      margin-right: 50vw;
+      justify-content: start;
+    }
+    
+    main.content {
+      background-color: var(--button-background-filled);
+      border-radius: 50px;
+      padding: 5vh 10vw;
+      margin: 5vh 5vw;
+      
+      --h1-size: 3rem;
+      --h2-size: 1.5rem;
+    }
+    
+    .button {
+      aspect-ratio: unset;
+      height: 90px;
+      border-radius: 45px;
+      margin: -1vh auto;
+    }
+  
+  }
+  
+  /* iPhone in portrait orientation */
+  @media (max-aspect-ratio: 1 / 1) {
+    
+    :root {
+      --button-width: 90vw;
+      --button-font-size: 8rem;
+      --h1-size: 12rem;
+      --h2-size: 6rem;
+      --content-text-size: 3rem;
+    }
+    
+    html {
+      background-position: left 48px bottom;
+    }
+    
+    h1{
+      margin-bottom: 0;
+    }
+    
+    .content {
+      margin: auto;
+      text-align: center;
+      padding: 0 5vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    main.content {
+      background-color: var(--button-background-filled);
+      border-radius: 100px;
+      padding: 5vh 10vw;
+      margin: 5vh 5vw;
+     
+      --h1-size: 2em;
+      --h2-size: 1.5em;
+    }
+    
+    .button {
+      aspect-ratio: unset;
+      height: 300px;
+      border-radius: 150px;
+      margin: 4vh auto;
+      background-color: var(--button-background-filled);
+    }
+    .button:active {
+      background-color: var(--button-background-filled-active);
+    }
+  }
+  
+  /* iPad in portrait orientation */
+  @media (800px <= width <= 900px) {
+    :root {
+      /* --background-color: #ffff00; */
+      --button-width: 40vw;
+      --button-font-size: 4rem;
+      --h1-size: 6rem;
+      --h2-size: 4rem;
+      --content-text-size: 1.5rem;
+      
+    }
+    .button {
+      aspect-ratio: unset;
+      height: 150px;
+      border-radius: 100px;
+      margin: 1vh auto;
+      background-color: var(--button-background-filled);
+    }
+    
+    main.content {
+      
+     
+      --h1-size: 3.5rem;
+      --h2-size: 2.5rem;
+    }
+  }  
+}

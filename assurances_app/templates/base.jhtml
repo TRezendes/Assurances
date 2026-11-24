@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% block head %}
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/fonts.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/default.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/assurances.css') }}">
+    <link rel="icon" href="/favicon.ico" sizes="32x32">
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon-folder/favicon.svg') }}" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    
+    <link rel="manifest" href="{{ url_for('static', filename='assurances.webmanifest') }}">
+    
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    {% endblock %}
+  </head>
+  <body>
+    <div class="content">{% block content %}{% endblock %}</div>
+    {% block scripts %}
+    {% endblock %}
+  </body>
+</html>

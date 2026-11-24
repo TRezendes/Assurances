@@ -1,0 +1,35 @@
+@font-face {
+    font-family: 'caveat-variable';
+    src: local('Caveat Regular'), local('Caveat-Regular'),
+        url('/fonts/Caveat-VariableFont_wght.ttf') format('truetype') tech('variations'),
+        url('../fonts/Caveat-VariableFont_wght.ttf') format('truetype') tech('variations');
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'caveat-regular';
+    src: local('Caveat Regular'), local('Caveat-Regular'),
+        url('/fonts/Caveat-Regular.woff2') format('woff2'),
+        url('/fonts/Caveat-Regular.woff') format('woff'),
+        url('../fonts/Caveat-Regular.woff') format('woff');
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'national-park';
+    src: local('National Park'), local('National-Park'),
+        url('/fonts/NationalPark-Variable.ttf') format('truetype') tech('variations'),
+        url('../fonts/NationalPark-Variable.ttf') format('truetype') tech('variations');
+}
+
+
+.national-park-light {
+  font-family: "National Park", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+}

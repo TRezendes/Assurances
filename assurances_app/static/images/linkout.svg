@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:svg="http://www.w3.org/2000/svg"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:cc="http://creativecommons.org/ns#"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  width="100%"
+  height="100%"
+  viewBox="0 0 150 150"
+  preserveAspectRatio="xMidYMid meet"
+  >
+  <title id="linkout_title">linkout</title>
+  <metadata id="linkout_metadata">
+    <rdf:RDF>
+      <cc:Work rdf:about="">
+        <dc:title>linkout</dc:title>
+        <dc:date>2025-05-13</dc:date>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Timothy Rezendes</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>html</rdf:li>
+            <rdf:li>web</rdf:li>
+            <rdf:li>link</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+        <cc:license rdf:resource="http://creativecommons.org/publicdomain/zero/1.0/" />
+        <dc:description>An open square with an arrow drawn from the middle and pointing up and out over the top right corner</dc:description>
+      </cc:Work>
+      <cc:License rdf:about="http://creativecommons.org/publicdomain/zero/1.0/">
+        <cc:permits rdf:resource="http://creativecommons.org/ns#Reproduction" />
+        <cc:permits rdf:resource="http://creativecommons.org/ns#Distribution" />
+        <cc:permits rdf:resource="http://creativecommons.org/ns#DerivativeWorks" />
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <defs>
+    <style>
+      svg {
+        fill: none;
+        stroke: #000000;
+        stroke-width: 10;
+        stroke-linecap: round;
+      }
+
+      #arrow {
+        transition: transform 0.1s;
+        transform: translate(-10px, 10px);
+      }
+
+      #arrow:hover {
+        transform: translate(0, 0);
+        cursor: pointer;
+      }
+
+      #hover-target {
+        fill: #00000000;
+        stroke: #00000000;
+      }
+    </style>
+    <mask id="maskBox">
+      <rect x="0" y="0" height="150" width="150" fill="#ffffff" />
+      <rect x="60" y="0" height="90" width="90" fill="#000000" />
+    </mask>
+  </defs>
+  <rect id="box" x="30" y="30" width="90" height="90" rx="10" ry="10" mask="url(#maskBox)" />
+  <g id="arrow">
+    <rect id="hover-target" x="0" y="0" width="150" height="150" />
+    <line id="arrow-stem" x1="75" y1="75" x2="130" y2="20" />
+    <path id="arrow-crown" d="M 85 20 L 130 20 L 130 65" />
+  </g>
+  <line id="box-top" x1="45" y1="30" x2="75" y2="30" />
+  <line id="box-right" x1="120" y1="105" x2="120" y2="75" />
+</svg>

@@ -1,0 +1,71 @@
+{% extends "base.jhtml" %}
+{% block title %}Assurances{% endblock %}
+{%block scripts %}
+  <script>
+    let mild_array = {{ mild_files }};
+    let spicy_array = {{ spicy_files }};
+    let audio_path_mild = "{{ url_for("static", filename='audio/mild') }}";
+    let audio_path_spicy = "{{ url_for("static", filename='audio/spicy') }}";
+    const mild_button = document.querySelector("#mild_switch");
+    const spicy_button1 = document.querySelector("#spicy_switch1");
+    const spicy_button2 = document.querySelector("#spicy_switch2");
+    
+    let audio_mild;
+    let audio_spicy;
+    
+    function load_next_mild() {
+      random_mild = mild_array[Math.floor(Math.random() * mild_array.length)];
+      audio_mild = new Audio(`${audio_path_mild}/${random_mild}`);
+      console.log(`Next mild: ${random_mild}`);
+    };
+    
+    function load_next_spicy() {
+      random_spicy = spicy_array[Math.floor(Math.random() * spicy_array.length)];
+      audio_spicy = new Audio(`${audio_path_spicy}/${random_spicy}`);
+      console.log(`Next spicy: ${random_spicy}`);
+    };
+    
+    function click_handler_mild() {
+      audio_mild.play();
+      load_next_mild();
+    };
+    
+    function click_handler_spicy() {
+      audio_spicy.play();
+      load_next_spicy();
+    };
+    
+    
+    document.addEventListener("DOMContentLoaded", load_next_mild);
+    document.addEventListener("DOMContentLoaded", load_next_spicy);
+    mild_button.addEventListener("click", click_handler_mild);
+    spicy_button1.addEventListener("click", click_handler_spicy);
+    spicy_button2.addEventListener("click", click_handler_spicy);
+    
+  </script>
+{% endblock %}
+{% block content %}
+<h1>Assurances</h1>
+<h2>For When You Need a Little Reassurance</h2>
+<div class="button">
+  <div>Click Here</div>
+  {# on iOS, <input type="checkbox" switch> triggers a native haptic click.
+   Placing a switch with opacity 0 on top of the button gets us a clicky button! #}
+  <input id="mild_switch" class="haptic-switch" type="checkbox" switch>
+</div>
+<div class="breathe">&nbsp;</div>
+{# {% if platform=='iPhone' %} #}
+  <div id="ios_spicy_button" class="button spicy">
+    <div>Click Here</div>
+    <div id="pepper">🌶️</div>
+    <input id="spicy_switch1" class="haptic-switch" type="checkbox" switch>
+  </div>
+{# {% else %} #}
+  <div id="spicy_button" class="button spicy">
+    <div>Click Here<br />🌶</div>
+    <input id="spicy_switch2" class="haptic-switch" type="checkbox" switch>
+  </div>
+{# {% endif %} #}
+
+{% endblock %}
+
