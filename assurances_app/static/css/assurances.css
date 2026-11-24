@@ -32,6 +32,9 @@
     --button-background-clear-active: #ffb4d063;
     --button-background-filled: #67001cdd ;
     --button-background-filled-active: #67001cf0;
+    --link: #e5317f;
+    --link-hover: #ff7c92;
+    --link-visited: #ff4796;
     
     --mild-button-margin-landscape: -1vh auto;
     --mild-button-margin-iphone-portrait: 4vh auto;
@@ -70,15 +73,15 @@ a {
   color: var(--link);
 }
 
-a::visited {
+a:visited {
   color: var(--link-visited);
 }
 
-a::hover {
+a:hover {
   color: var(--link-hover);
 }
 
-a::active {
+a:active {
   opacity: 0.25;
 }
 
@@ -163,7 +166,7 @@ main.content {
 }
 
 a[rel~="external" i]::after {
-  background-image: url('../images/linkout-closed.svg');
+  background-image: url('../images/linkout-closed-dark.svg');
   background-size: 1.4em 1.4em;
   background-position: left;
   background-repeat: no-repeat;
@@ -175,7 +178,7 @@ a[rel~="external" i]::after {
 }
 
 a[rel~="external" i]:hover::after {
-  background-image: url('../images/linkout-open.svg');
+  background-image: url('../images/linkout-open-dark.svg');
 }
 
 .error_cat {
@@ -382,6 +385,12 @@ a[rel~="external" i]:hover::after {
 }
 
 @media not (prefers-color-scheme: dark) {
+  a[rel~="external" i]::after {
+    background-image: url('../images/linkout-closed.svg');
+  }
+  a[rel~="external" i]:hover::after {
+    background-image: url('../images/linkout-open.svg');
+  }
   #spicy_button, #ios_spicy_button {
     display: none;
   }
